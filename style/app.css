@@ -104,6 +104,7 @@
 }
 
 #tools > button {
+    cursor: pointer;
     background-color: var(--text-editor-color);
     color: var(--ligth);
     border: none;
@@ -111,8 +112,13 @@
     min-height: 35px;
     font-size: 15px;
     font-weight: 800;
+
 }
 
 #tools > span {
     margin-right: 10px;
+}
+
+#btn-save-editor {
+    padding: 0 15px;
 }
