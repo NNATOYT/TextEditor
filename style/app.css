@@ -10,8 +10,9 @@
 
 @font-face {
     font-family: "Info History";
-    src: url(../resources/Info\ Story.otf);
-    src: url(../resources/Info\ Story.ttf);
+    src: url(../resources/Jost-VariableFont_wght.ttf);
+    font-weight: 600;
+
 }
 * {
     padding: 0;
@@ -79,10 +80,39 @@
 
 #note-text-editor {
     font-family: "Info History";
-    font-size: 20px;
+    font-size: 15px;
     color: var(--ligth);
     background: var(--text-editor-color);
     padding: 15px;
     outline: none;
     border: none;
+    resize: none;
+    line-height: 25px;
+    letter-spacing: 2px;
+    overflow: auto;
+}
+
+#tools {
+    font-family: "Info History";
+    color: white;
+    background: var(--name-editor-color);
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+
+#tools > button {
+    background-color: var(--text-editor-color);
+    color: var(--ligth);
+    border: none;
+    min-width: 35px;
+    min-height: 35px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+#tools > span {
+    margin-right: 10px;
 }
