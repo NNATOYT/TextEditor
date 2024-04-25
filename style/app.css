@@ -1,0 +1,88 @@
+:root {
+    --text-editor-color: #252323;
+    --name-editor-color: #1E1E1E;
+    --note-color-1: #464646;
+    --note-color-2: #323232;
+    --note-color-hover: #646464 ;
+    --ligth: #DCDCDC;
+}
+
+
+@font-face {
+    font-family: "Info History";
+    src: url(../resources/Info\ Story.otf);
+    src: url(../resources/Info\ Story.ttf);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+#nav {
+    background: var(--name-editor-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+#title {
+    color: var(--ligth);
+    padding: 10px;
+}
+
+#note-list {
+    width: 100%;
+    overflow: auto;
+} 
+
+.note {
+    color: var(--ligth);
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.note:nth-child(even) {
+    background-color: var(--note-color-1);
+}
+.note:nth-child(odd) {
+    background-color: var(--note-color-2);
+}
+
+.note:hover {
+    background: var(--note-color-hover);
+}
+#editor {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+#note-name-editor {
+    font-family: "Info History";
+    font-size: 20px;
+    color: var(--ligth);
+    background: var(--name-editor-color);
+    padding: 15px;
+    outline: none;
+    border: none;
+}
+
+#note-text-editor {
+    font-family: "Info History";
+    font-size: 20px;
+    color: var(--ligth);
+    background: var(--text-editor-color);
+    padding: 15px;
+    outline: none;
+    border: none;
+}
