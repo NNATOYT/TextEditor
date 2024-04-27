@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/app.css">
+    <link rel="stylesheet" href="./style/index.css">
     <title>Text Editor</title>
 </head>
 <body>
@@ -16,16 +16,24 @@
             
             <div id="notes-container">
                 <!-- Here will are the notes -->
+                <!--
+                <div class="note">
+                    <b>Name:${note.name}</b>
+                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tempore porro enim consectetur quasi veritatis distinctio voluptatibus nihil est nesciunt alias dolores ducimus, aspernatur ratione assumenda fugit inventore, ut eos?</span>
+                    <span>Date: 10/10/2024</span>
+                </div>
+            
+            -->
             </div>
         </div>
         <div id="editor">
             <input id="note-name-editor" placeholder="Enter the note's name ...">
             <textarea id="note-text-editor" cols="1" rows="1" placeholder="Write here your note ..."></textarea>
             <div id="tools">
-                <button id="btn-save-editor">Save (ctrl + s)</button>
-                <span>zoom : 100%</span>
-                <button>+</button>
-                <button>-</button>
+                <button id="btn-save-editor" class="btn"><b>Save (ctrl + s)</b></button>
+                <span><b>zoom : 100%</b></span>
+                <button class="btn"><b>+</b></button>
+                <button  class="btn"><b>-</b></button>
             </div>
         </div>
     </div>

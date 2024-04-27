@@ -1,0 +1,116 @@
+:root {
+    --text-editor-color: #252323;
+    --name-editor-color: #1E1E1E;
+    --note-color-1: #323232;
+    --note-color-2: #464646;
+    --note-color-hover: #646464 ;
+    --ligth: #DCDCDC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    
+}
+#nav {
+    background-color: var(--name-editor-color);
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+
+}
+#title {
+    color: var(--ligth);
+    padding: 10px;
+}
+
+#notes-container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.note {
+    background-color: red;
+    color: var(--ligth);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+
+    button {
+        align-self: end;
+    }
+}
+
+
+
+.note > .note-name , .note > .note-text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.note:nth-child(odd) {
+    background-color: var(--note-color-1);
+}
+.note:nth-child(even) {
+    background-color: var(--note-color-2);
+}
+.note:hover {
+    background-color: var(--note-color-hover);
+}
+
+#editor {
+    width: 80%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    input {
+        height: 50px;
+        padding: 10px;
+        outline: none;
+        border:none;
+        color: var(--ligth);
+        background-color: var(--name-editor-color)
+    };
+
+    textarea {
+        padding: 10px;
+        outline: none;
+        border:none;
+        resize: none;
+        color: var(--ligth);
+        background-color: var(--text-editor-color)
+    };
+}
+
+#tools {
+    height: 40px;
+    background-color: var(--name-editor-color);
+    color: var(--ligth);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    padding: 0 15px;
+
+
+}
+
+.btn {
+    font-size: 15px;
+    height: 30px;
+    min-width: 30px;
+    padding: 0 5px;
+    border: none;
+    background-color: var(--text-editor-color);
+    color: var(--ligth);
+    cursor: pointer;
+}

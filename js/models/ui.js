@@ -13,13 +13,14 @@ export class UI {
         const element = document.createElement("div")
         const buttonDelete = document.createElement("button")
 
-        buttonDelete.innerText = "Delete"
+        buttonDelete.innerHTML = "<b>Delete</b>"
+        buttonDelete.classList = "btn"
         buttonDelete.addEventListener("click",() => element.remove())
 
         element.classList = "note"
         element.innerHTML = `
-            <b>Name:${note.name}</b>
-            <span class="text">${note.text}</span>
+            <b class="note-name">${note.name}</b>
+            <p class="note-text">${note.text}</p>
             <span>Date: 10/10/2024</span>
         `
         element.append(buttonDelete)
