@@ -11,7 +11,7 @@
         <div id="nav">
             <div id="title">
                 <h1>Text Editor</h1>
-                <span>This is the first version of my text editor</span>
+                <span>This is the first version of my text editor , i hope you enjoy my word :)</span>
             </div>
             
             <div id="notes-container">
@@ -21,11 +21,16 @@
         <div id="editor">
             <input id="note-name-editor" placeholder="Enter the note's name ...">
             <textarea id="note-text-editor" cols="1" rows="1" placeholder="Write here your note ..."></textarea>
-            <div id="tools">
-                <button id="btn-save-editor" class="btn"><b>Save (ctrl + s)</b></button>
-                <span><b>zoom : 100%</b></span>
-                <button class="btn"><b>+</b></button>
-                <button  class="btn"><b>-</b></button>
+            <div id="tools-bar-editor">
+                <div class="section-1">
+                    <button class="btn"><b>Config.</b></button>
+                </div>
+                <div class="section-2">
+                    <button id="btn-save-editor" class="btn"><b>Save (ctrl + s)</b></button>
+                    <span><b id="editor-zoom-porcent">zoom : 100%</b></span>
+                    <button class="btn" id="btn-add-zoom"><b>+</b></button>
+                    <button  class="btn" id="btn-less-zoom"><b>-</b></button>
+                </div>
             </div>
         </div>
     </div>
