@@ -10,6 +10,9 @@ export class UI {
     */
     createNewNote(note) {
         const notesContainer = document.getElementById("notes-container")
+        const editorName = document.getElementById("note-name-editor")
+        const editorText = document.getElementById("note-text-editor")
+
         const element = document.createElement("div")
         const buttonDelete = document.createElement("button")
         const buttonEdit = document.createElement("button")
@@ -23,6 +26,7 @@ export class UI {
         buttonEdit.classList = "btn"
         buttonEdit.addEventListener("click" , () => this.openNote(note))
 
+        element.id = note.id
         element.classList = "note"
         element.innerHTML = `
             <b class="note-name">${note.name}</b>
@@ -31,6 +35,10 @@ export class UI {
         `
 
         buttonsContainer.classList = "btns-container"
+
+
+        editorName.value = ""
+        editorText.value = ""
 
         buttonsContainer.append(buttonDelete)
         buttonsContainer.append(buttonEdit)
