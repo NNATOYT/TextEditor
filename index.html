@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="#" id="font-link">
     <link rel="stylesheet" href="./style/index.css">
     <title>Text Editor</title>
 </head>
@@ -23,7 +24,7 @@
             <textarea id="note-text-editor" cols="1" rows="1" placeholder="Write here your note ..."></textarea>
             <div id="tools-bar-editor">
                 <div class="section-1">
-                    <button class="btn"><b>Config.</b></button>
+                    <button class="btn" id="btn-open-settings"><b>Config.</b></button>
                 </div>
                 <div class="section-2">
                     <button id="btn-save-editor" class="btn"><b>Save (ctrl + s)</b></button>
@@ -33,7 +34,19 @@
                 </div>
             </div>
         </div>
+        <div id="settings-card">
+            <div id="settings-container">
+                <div class="setting-option">
+                    <span>Font family</span>
+                </div>
+            </div>
+            <div id="settings-card-food">
+                <a href="https://github.com/NNATOYT/TextEditor" class="btn"><b>Source Code</b></a>
+                <button class="btn" id="btn-save-settings"><b>Save</b></button>
+            </div>
+        </div>
     </div>
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/settings.js"></script>
 </body>
 </html>

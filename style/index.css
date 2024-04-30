@@ -5,6 +5,8 @@
     --note-color-2: #464646;
     --note-color-hover: #646464 ;
     --ligth: #DCDCDC;
+    --settings-color: #131313;
+    --button-border-color: #1c1919;
 }
 
 * {
@@ -109,4 +111,49 @@
     color: var(--ligth) ;
     border: none;
     cursor: pointer;
+    border-bottom: 4px solid var(--button-border-color);
+}
+
+.btn:active {
+    position:relative;
+    border: none;
+    height: 26px;
+    bottom: -4px;
+}
+
+#settings-card {
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    padding: 15px;
+    background-color: var(--settings-color);
+    color: var(--ligth);
+
+    width: 600px;
+    height: 500px;
+
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+
+    #settings-card-food {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+}
+
+.setting-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: var(--name-editor-color);
 }

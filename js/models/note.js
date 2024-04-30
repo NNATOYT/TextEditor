@@ -7,7 +7,7 @@ export class Note {
      * @param {int} id ID of the note
      */
     constructor(name,text,id) {
-        this.name = name;
+        this.name = name || "Nameless " + id;
         this.text = text;
         this.id = id
     }

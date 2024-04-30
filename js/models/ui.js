@@ -26,14 +26,11 @@ export class UI {
 
         buttonDelete.innerHTML = "<b>Delete</b>"
         buttonDelete.classList = "btn"
-        buttonDelete.addEventListener("click", () => {
-            element.remove()
-            this.manager.removeNoteToArray(note.id)
-        })
+        buttonDelete.addEventListener("click", () => this.deleteNote(element,note.id))
 
         buttonEdit.innerHTML = "<b>Edit</b>"
         buttonEdit.classList = "btn"
-        buttonEdit.addEventListener("click" , () => this.editNote(note))
+        buttonEdit.addEventListener("click" , () => this.editNote(note.id))
 
         element.id = note.id
         element.classList = "note"
@@ -61,7 +58,8 @@ export class UI {
      * 
      * @param {Note} note Note to open. 
      */
-    editNote(note) {
+    editNote(noteID) {
+        const note = this.manager.getNoteFromID(noteID)
         const editorName = document.getElementById("note-name-editor")
         const editorText = document.getElementById("note-text-editor")
         
@@ -73,8 +71,16 @@ export class UI {
         this.changeEditorMode(app.EDITOR_MODE_EDITING)
     }
 
-    deleteNote() {
-
+    /**
+     * 
+     * @param {HTMLElement} element Element to delete.
+     */
+    deleteNote(element,noteID) {
+        element.remove()
+        this.manager.removeNoteToArray(noteID)
+        this.manager.editorMode = app.EDITOR_MODE_CREATING
+        this.changeEditorMode(this.manager.editorMode)
+        this.resetValuesForm()
     }
 
     /**
@@ -138,5 +144,11 @@ export class UI {
         
         editorName.value = ""
         editorText.value = ""
+    }
+
+
+    //SETTINS SECTION//
+    showSettingsMenu() {
+        
     }
 }
