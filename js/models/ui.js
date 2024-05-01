@@ -12,11 +12,20 @@ export class UI {
     }
 
     /**
-    @param {Note} note The note to add on the Document
-    @param {Function} callback 
-    */
-    createNewNote(note) {
-        
+     * 
+     * @param {Note[]} notesArray 
+     */
+    init(notesArray) {
+        notesArray.forEach((note) => {
+            this.createNote(note)
+        })
+    }
+
+    /**
+     * 
+     * @param {Note} note 
+     */
+    createNote(note) {
         const notesContainer = document.getElementById("notes-container")
 
         const element = document.createElement("div")
@@ -46,12 +55,17 @@ export class UI {
         buttonsContainer.append(buttonEdit)
         element.append(buttonsContainer)
         notesContainer.append(element)
+    }
+
+    /**
+    @param {Note} note The note to add on the Document
+    @param {Function} callback 
+    */
+    createNewNote(note) {
+        this.createNote(note)
 
         this.resetValuesForm()
-
-        //MANAGER FUNCTION//
-        this.manager.noteID++
-        this.manager.addNoteToArray(note)
+        this.updateManager(note)
     }
 
     /**
@@ -69,6 +83,7 @@ export class UI {
         this.manager.currentNoteID = note.id
         this.manager.editorMode = app.EDITOR_MODE_EDITING
         this.changeEditorMode(app.EDITOR_MODE_EDITING)
+        console.log(this.manager)
     }
 
     /**
@@ -81,6 +96,8 @@ export class UI {
         this.manager.editorMode = app.EDITOR_MODE_CREATING
         this.changeEditorMode(this.manager.editorMode)
         this.resetValuesForm()
+        this.manager.saveData()
+
     }
 
     /**
@@ -91,6 +108,16 @@ export class UI {
     updateNote(noteElement,note) {
         noteElement.children[0].textContent = note.name
         noteElement.children[1].textContent = note.text
+
+    }
+
+    /**
+     * 
+     * @param {Note} note 
+     */
+    updateManager(note) {
+        this.manager.noteID++
+        this.manager.addNoteToArray(note)
     }
 
     /**
@@ -146,6 +173,9 @@ export class UI {
         editorText.value = ""
     }
 
+    loadNotes() {
+
+    }
 
     //SETTINS SECTION//
     showSettingsMenu() {
